@@ -1,0 +1,72 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0;
+  /* padding: 2rem; */
+  text-align: center;
+  justify-content: center;
+  
+
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: weight; */
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+
+header h1{
+  font-style: "Italiano", cursive;
+  text-align:  left;
+  padding: 10px 20px
+}
+
+#navBar{
+ background-color:  #a3a19eff;  
+  width: 100%
+}
+li{
+  list-style-type: none;
+}
+.productos{
+  margin: 0;
+}
+
+#lista-productos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+#lista-productos li{
+ /*  display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(232, 217, 195);
+  padding: .5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  font-size: .8rem;
+}
+footer{
+  margin: 0;
+}
+.nosotros{
+  background-color: rgb(245, 239, 231);
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+

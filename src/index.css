@@ -1,0 +1,23 @@
+:root {
+  margin: 0;
+  /* font-family:Arial, Helvetica, sans-serif;
+  font-weight: normal; */
+  justify-content: center;
+}
+ul{
+  list-style-type: none;
+}
+nav a{
+  text-decoration: none;
+  color: aliceblue;
+}
+nav li{
+  display: inline-block;
+  padding: 1rem 2rem;
+
+}
+nav li:hover{
+  background-color: rgb(248, 206, 127);  
+  border-radius: 3px;
+  color: black;
+}
