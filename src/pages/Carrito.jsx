@@ -1,48 +1,79 @@
+import React from 'react';
 
-/* 
-function Carrito({carrito, setCarrito}) {
-  //Calcular el total de la compra
-  const vaciarCarrito =() =>{
+
+export default function CarritoCompras({ carrito, setCarrito }) {
+  const vaciarCarrito = () => {
     setCarrito([]);
   };
 
-  const total = carrito.reduce((sum, item) => sum + Number(item.precio), 0);
- 
+  const quitarCantidad = (idProducto) => {
+    const carritoActualizado = carrito.map(producto => {
+      if (producto.id === idProducto) {
+        const cantidadActual = producto.cantidad || 1;
+        if (cantidadActual === 1) {
+          return null;
+        }
+        return { ...producto, cantidad: cantidadActual - 1 };
+      }
+      return producto;
+    }).filter(producto => producto !== null);
+
+    setCarrito(carritoActualizado);
+  };
+
+    const agregarCantidad = (idProducto) => {
+    const nuevoCarrito = carrito.map(producto => {
+      if (producto.id === idProducto) {
+        return {
+          ...producto,
+          cantidad: (producto.cantidad || 1) + 1
+        };
+      }
+      return producto;
+    });
+    setCarrito(nuevoCarrito);
+  };
+
+  const total = carrito.reduce((sum, item) => {
+    const cantidad = item.cantidad || 1;
+    return sum + (Number(item.precio) * cantidad);
+  }, 0);
 
   return (
-    
     <div>
       <hr />
-      <h2>Figuras Antiguas</h2>
-      {carrito.length === 0?(
+      <h3>Carrito de Compras</h3>
+      <hr />
+      {carrito.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
         <>
-        {carrito.map((item) => (
+          {carrito.map((item) => (
+            
+
+            <div className='carrito_producto' key={item.id}>
+              <div style={{marginBottom: ".5rem", color:"#f15508ff"}}>
+                 {item.nombre} <br /> 
+                ${Number(item.precio).toFixed(3)}
+              </div>
+              <div >
+                  <button className='' onClick={() => quitarCantidad(item.id)}>-</button>
+                  Cantidad ({item.cantidad || 1})
+                 <button onClick={() => agregarCantidad(item.id)}>+</button>
+              </div>
+                
+            </div>
+          ))}
+
           <div>
-            {item.nombre} - ${item.precio.toFixed(3)}
+            <hr />
+            Total: ${Number(total).toFixed(2)}
           </div>
-        ) )}
-        {/* Muestra el total de la compra }/* 
-        <div style={{ marginTop: '15px', padding: '10px', backgroundColor: '#f5f5f5',
-          fontWeight: 'bold'}}>
-            Total: ${total.toFixed(3)}
-          </div>
+          <button onClick={vaciarCarrito}>
+            Vaciar Carrito
+          </button>
         </>
       )}
     </div>
-    
-    
-  )
+  );
 }
-
-export default Carrito; */
-import React from 'react'
-
-function CarritoCompras () {
-  return (
-    <div>Carrito</div>
-  )
-}
-
-export default CarritoCompras;

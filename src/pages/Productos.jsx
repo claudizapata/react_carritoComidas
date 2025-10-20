@@ -68,14 +68,18 @@ export default function Productos() {
                           <div style={{marginBottom: "1rem", fontWeight: "bolder", fontSize: "1rem"}}>
                               ${producto.precio}
                           </div>
-                          <Link to= {`/productos/${producto.categoria || 'sin-categoria'}/${producto.id}`} state={{producto}}><button>Más Detalle</button></Link>
-                          {/* "state es la memoria del producto. Cuando hago click en boton "Más Detalle" guarda en memoria 
-                          el producto para luego mostrar el detalle del producto */}
-                          <button onClick={() => agregarAlCarrito(producto)}>Comprar</button>                
+                          <div style={{display: "flex", justifyContent:"space-around"}}>
+                                <Link to= {`/productos/${producto.categoria || 'sin-categoria'}/${producto.id}`} state={{producto}}><button>Más Detalle</button></Link>
+                            {/* "state es la memoria del producto. Cuando hago click en boton "Más Detalle" guarda en memoria 
+                            el producto para luego mostrar el detalle del producto */}
+                            <button onClick={() => agregarAlCarrito(producto)}>Comprar</button>
+                          </div>
+                                     
                     </li>
                 ))}
             </ul>
-            <CarritoCompras carrito={carrito} setCarrito={setCarrito}/>
+           {/*  <li><Link to="/Carrito"> Carrito </Link> </li>{/* Carga del link a Productos */} 
+              <CarritoCompras carrito={carrito} setCarrito={setCarrito} />
         </section>
 </>
   );

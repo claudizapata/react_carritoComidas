@@ -10,6 +10,7 @@ import ProductoDetalle from './pages/DetalleProductos'
 import './App.css'
 
 
+
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
         <Route path='/productos/:id' element= { <ProductoDetalle/> } />
         <Route path='/productos/:categoria/:id' element= { <ProductoDetalle/> } />{/* Categoria y id son rutas dinámicas */}
         <Route path='/productos/categoria/:id' element= { <ProductoDetalle/> }/>{/* En el caso de tener una BD sin categoria, la ponemos estática */}
+       {/*  <Route path='/carrito' element={ <CarritoPage/> } /> */}
 
       </Routes> 
       <Footer/>
