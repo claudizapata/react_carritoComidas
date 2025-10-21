@@ -32,7 +32,9 @@ header h1{
 }
 
 #navBar{
- background-color:  #a3a19eff;  
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
+ /* background-color:  #a3a19eff;   */
   width: 100%
 }
 li{
